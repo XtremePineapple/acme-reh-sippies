@@ -1,6 +1,6 @@
 console.log('deeBee')
 
-const pg = requires('db');
+const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL || 'postgres://localhost/acme_reh_sippies');
 client.connect();
 
@@ -29,9 +29,17 @@ const createChef = async(chef) => {
     const SQL = `INSERT INTO chefs(name) values($1) returning *;`
     return (await client.query(SQL, [chef.name])).rows[0];
 }
+const createRecipie = async(recipie) => {
+    const SQL = `INSERT INTO recipie(name) values($1) returning *;`
+    return (await client.query(SQL, [recipie.name])).rows[0];
+}
 
 const readChefs = async() => {
     const SQL = `SELECT * FROM chefs`
+    return (await client.query(SQL)).rows;
+}
+const readRecipies = async() => {
+    const SQL = `SELECT * FROM recipies`
     return (await client.query(SQL)).rows;
 }
 
