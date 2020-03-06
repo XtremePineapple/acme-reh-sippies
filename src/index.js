@@ -1,7 +1,7 @@
-console.log('inDecks')
+console.log('index.js')
 import React, {useState, useEffect} from "react"
 import ReactDOM from 'react-dom'
 import AppPapApApPaap from './appPapApApPaap'
 
-const ruut = document.getElementById('ruut');
-ReactDOM.render(<AppPapApApPaap />, ruut);
+const root = document.getElementById('root');
+ReactDOM.render(<AppPapApApPaap />, root);
