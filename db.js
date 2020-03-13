@@ -1,7 +1,7 @@
 console.log('deeBee')
 
 const pg = require('pg');
-const client = new pg.Client(process.env.DATABASE_URL || 'postgres://localhost/acme_reh_sippies');
+const client = new pg.Client(process.env.DATABASE_URL || 'postgres://zhzewldqykkbed:dbac764262da9030a996c498ac4276be64de37b103c2491b77ac32bc9a82f834@ec2-52-203-160-194.compute-1.amazonaws.com:5432/d4929rupdc7ebp?ssl=true');
 client.connect();
 
 const sink = async() => {
